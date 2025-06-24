@@ -1,8 +1,9 @@
  
  const container = document.querySelector(".container");
+ const grid = [];
+ let counter = 1;
 
  function createGrid(columnCount, rowCount) {
-   const grid = [];
    //creates all columns and assigns them a class to make them targetable by CSS
    for (let x = 0; x < columnCount; x++) {
      grid[x] = []; 
@@ -18,8 +19,16 @@
         row.textContent = " ";
         row.classList.add("row");
         col.appendChild(row);
+        hover(row);
      }
    }
  }
- 
+
+
+ function hover (item) {
+    item.addEventListener( "mouseover", 
+        () => item.style = "background-color: black" );
+ }
+
+
 createGrid(16, 16);
