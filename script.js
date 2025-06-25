@@ -1,9 +1,10 @@
  
  const container = document.querySelector(".container");
- const grid = [];
+ const newSketch = document.querySelector(".newSketch");
  let counter = 1;
 
  function createGrid(columnCount, rowCount) {
+    grid = [];
    //creates all columns and assigns them a class to make them targetable by CSS
    for (let x = 0; x < columnCount; x++) {
      grid[x] = []; 
@@ -19,7 +20,7 @@
         row.textContent = " ";
         row.classList.add("row");
         col.appendChild(row);
-        hover(row);
+        hover(row); //targets individual array for drawing
      }
    }
  }
@@ -31,4 +32,15 @@
  }
 
 
-createGrid(16, 16);
+createGrid(16, 16); // default grid size
+
+//variable grid size
+newSketch.addEventListener("click", () => {  
+   let newGrid = prompt("Enter grid size up to 100:");
+   if (newGrid > 100) {
+      alert("invalid input - set grid size to 100");
+      newGrid = 100;
+   }
+   container.innerHTML = ""; //clears grid before creating a new one
+   createGrid(newGrid,newGrid);
+});
