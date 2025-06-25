@@ -5,6 +5,8 @@
 
  //setting colors
  let color = "black";
+ const eraser = document.querySelector(".eraser");
+ eraser.addEventListener("click", () => color = "eraser");
  const random = document.querySelector(".rainbow");
  random.addEventListener("click", () => color = "rainbow");
  const black = document.querySelector(".black");
@@ -45,6 +47,9 @@
       else if (color === "gradient") {
          let newColor = gradientColor(item.style.backgroundColor);
          item.style.backgroundColor = newColor;
+      }
+      else if (color === "eraser") {
+         item.style.backgroundColor = "hsl(0,0.00%,100.00%)";
       }
       else {
          item.style.backgroundColor = "hsl(0,0.00%,00.00%)";
