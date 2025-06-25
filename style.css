@@ -32,6 +32,11 @@ h1 {
     border: 1px solid lightgray;
 }
 
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
 .row {
     flex: 1;
 }
@@ -41,8 +46,7 @@ h1 {
     flex: 1;
 }
 
-.newSketch {
+button {
     margin: 20px;
     padding: 5px;
-    width: 50px;
 }
